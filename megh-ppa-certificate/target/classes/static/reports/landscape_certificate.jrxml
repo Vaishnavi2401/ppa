@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="landscape_certficate" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="41fea62a-0e38-4bb3-b35a-ce87c91ed170">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="bodyContent" class="java.lang.String"/>
+	<parameter name="bgpath" class="java.lang.String"/>
+	<parameter name="qrcode" class="java.lang.String"/>
+	<background>
+		<band height="555" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="1" y="0" width="801" height="555" uuid="91c67fd5-aa72-45b1-ac19-77b89478d47b"/>
+				<imageExpression><![CDATA[$P{bgpath}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="260" splitType="Stretch">
+			<textField>
+				<reportElement x="42" y="50" width="713" height="146" uuid="50aa488c-db61-471c-bf1b-d1231a0b4be6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{bodyContent}]]></textFieldExpression>
+				</textField>
+			<image>
+				<reportElement x="335" y="196" width="64" height="64" uuid="2ac538da-500a-4141-b78a-0da1f4b0e326"/>
+				<imageExpression><![CDATA[$P{qrcode}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="306" y="10" width="67" height="20" uuid="2c8ec884-6018-41b1-a9c6-10a233cc6b84"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Issued Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="373" y="10" width="76" height="20" uuid="7718fe26-88c2-4a7c-88ed-b505eeb5bc23"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
