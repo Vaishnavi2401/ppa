@@ -1,5 +1,7 @@
 package com.cdac.paymentService.service;
 
+import java.sql.Timestamp;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,13 @@ public class paymentDetailsService {
 		//System.out.println("data "+ userId +" "+courseId);
 		String currentStatus = "paid";
 		return repo.findByUserIdCourseIdAndStatus(userId, currentStatus ,courseId);
+	}
+	
+	
+	public List<paymentDetails> getByCourseIdAndDateRange(String courseid, Timestamp fromdate,Timestamp todate) {
+		// TODO Auto-generated method stub
+		//System.out.println("------------"+userid+"----"+courseid+"---"+fromdate+"--"+todate);
+		return repo.findByCourseIdAndDateRange(courseid, fromdate, todate);
 	}
 	
 }

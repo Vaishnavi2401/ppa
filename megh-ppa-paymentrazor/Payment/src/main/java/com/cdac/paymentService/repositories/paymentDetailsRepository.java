@@ -1,5 +1,8 @@
 package com.cdac.paymentService.repositories;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -23,4 +26,7 @@ public interface paymentDetailsRepository extends JpaRepository<paymentDetails, 
 	
 	@Query(value = "SELECT * FROM payment_details pd where pd.order_id=:orderId",nativeQuery = true)
 	public paymentDetails getNewOrder(@Param("orderId") int orderId);
+	
+	@Query(value = "select * from payment_details pd where pd.course_id=:courseId and pd.transaction_date>=:fromdate and pd.transaction_date<=:todate and status = 'paid'", nativeQuery = true)
+	public List<paymentDetails> findByCourseIdAndDateRange(@Param("courseId") String courseId, @Param("fromdate") Timestamp fromdate,@Param("todate") Timestamp todate);
 }
