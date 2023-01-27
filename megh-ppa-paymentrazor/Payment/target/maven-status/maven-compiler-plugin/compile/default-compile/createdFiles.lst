@@ -1,7 +1,6 @@
-com/cdac/paymentService/utils/PGProperties.class
-com/cdac/paymentService/controller/paymentController.class
-com/cdac/paymentService/service/paymentDetailsService.class
-com/cdac/paymentService/repositories/paymentDetailsRepository.class
-com/cdac/paymentService/utils/PGUtil.class
-com/cdac/paymentService/models/paymentDetails.class
-com/cdac/paymentService/PaymentApplication.class
+com\cdac\paymentService\repositories\paymentDetailsRepository.class
+com\cdac\paymentService\utils\PGUtil.class
+com\cdac\paymentService\utils\PGProperties.class
+com\cdac\paymentService\service\paymentDetailsService.class
+com\cdac\paymentService\controller\paymentController.class
+com\cdac\paymentService\models\paymentDetails.class
